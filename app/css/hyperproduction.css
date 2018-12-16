@@ -1,0 +1,771 @@
+.lm_close {
+  display: none;
+}
+
+.lm_header .lm_tab {
+  border-top: 2px solid #222;
+  height: 12px !important;
+}
+
+.lm_tab.active-tab {
+  border-top: 2px solid orange;
+}
+
+::-webkit-scrollbar {width: 12px; height: 12px;}
+::-webkit-scrollbar-thumb {background-color: #444; border-radius: 5px;}
+::-webkit-scrollbar-thumb:hover {background-color: #777;}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {background-color: #111;}
+
+/** ELEMENTS **/
+#workspace, #sidebar {
+/*	border:0.1em dotted #d4e06b;
+*/	-webkit-user-select: none;
+  	-moz-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
+}
+
+.marquee {
+  display: block;
+  position: absolute;
+  z-index: 800;
+  border: 1px dashed Highlight;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+/** HOVER EFFECTS **/
+.hp-mapping-container  .hp-node:hover, ._jsPlumb_source_hover, ._jsPlumb_target_hover {
+    outline:1px solid orange;
+/*    color:orange;
+*/}
+
+._jsPlumb_connector, ._jsPlumb_connector > path {
+  pointer-events: none !important;
+}
+
+.hp-node-active, .hp-node:focus, .hp-node.selected {
+  outline:1px solid red!important;
+  color: inherit;
+}
+
+.hp-graph-tile {
+  height: 100%;
+/*  display: flex;
+  flex-wrap: wrap; */
+  overflow-y: scroll;
+}
+
+.hp-graph-tile > .hp-graph-container {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+  max-width: 49%;
+  height: 120px;
+  border: 1px solid #333;
+  /* flex: 1 1 auto; */
+}
+
+.hp-graph-tile > .hp-graph-container[data-graph]:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.2em;
+  content: attr(data-graph);
+  color: #CCC;
+}
+
+.hp-graph-container {
+  width:100%;
+  height:100%;
+}
+
+.panelColor {
+  position: relative;
+  background: #000;
+}
+
+.panelColor canvas {
+  cursor: crosshair;
+  margin: 0 auto;
+  display: block;
+  height: 100%;
+  opacity: 0.0;
+  /*
+  border: 1px solid #999;
+  border-radius: 50%;
+  */
+}
+
+.panelColorSelection {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid #FFF;
+  outline: 1px solid #000;
+  outline-offset: -2px;
+  top: 50%;
+  left: 50%;
+  margin: -4px 0 0 -4px;
+  transform: translate(0, 0);
+  pointer-events: none;
+}
+
+.hp-graph-container input[type=range] {
+  margin: 1em;
+  vertical-align: top;
+  width: 3em;
+  -webkit-appearance: slider-vertical;
+  position: relative;
+}
+
+.hp-graph-container input[type=range]::after {
+  content: attr(data-label);
+  display: block;
+  width: 100%;
+  pointer-events: none;
+  text-align: center;
+  position: absolute;
+  bottom: -2em;
+}
+
+.hp-widget-container {
+  width:100%;
+  height:100%;
+  padding: 0.2em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.hp-mapping-container {
+  height:100%;
+  width:100%;
+  overflow:scroll;
+  position: relative;
+}
+
+.hp-mapping-container.panning {
+  /* cursor: -webkit-grabbing; */
+  /* The grabbing cursor doesn't seem to be implemented in Electron */
+  cursor: url('data:image/vnd.microsoft.icon;base64,AAACAAEAICACAAcABQAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AAAA/AAAAfwAAAP+AAAH/gAAB/8AAA//AAAd/wAAGf+AAAH9gAADbYAAA2yAAAZsAAAGbAAAAGAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////gH///4B///8Af//+AD///AA///wAH//4AB//8AAf//AAD//5AA///gAP//4AD//8AF///AB///5A////5///8='), all-scroll;
+  cursor: grabbing;
+}
+
+.hp-mapping-container[data-file-ref]:after {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: "ref: " attr(data-file-ref);
+  padding: 0.5em;
+  box-sizing: border-box;
+  pointer-events: none;
+  color: #888;
+  font-size:0.7em;
+  margin-top: 2em;
+}
+
+.hp-mapping-container > div {
+  position: relative;
+  height: 200%;
+  width: 300%;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAPUlEQVR42u3OQQkAQAwDwWiqhPgXdZyLFiaweU+yeG0ngICAgICAgICAgICAgICAgICAgICAgIBXgf829wACnEyJNjKPEgAAAABJRU5ErkJggg==) repeat;
+  /* height: 200%; */
+  /* transform: scale(0.5, 0.5); */
+  /* width: 300%; */
+}
+
+html, body {
+  height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  overflow: hidden;
+}
+
+#workspace {
+  display: block;
+  height: 100%;
+  flex: 1 1 auto;
+}
+
+#sidebar {
+  display: block;
+  height: 100%;
+  width: 12em;
+  flex: 0 0 auto;
+  background: #222;
+}
+
+.hp-node-list-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 1.5em);
+}
+
+.hp-node-list-item {
+  background-color: #aaa;
+  border: 1px solid #333;
+  font-size:12px;
+  padding:0.1em;
+  z-index:2000;
+  display:block;
+  cursor: move;
+}
+
+.hp-node-list-item:hover {outline: 3px solid #369; outline-offset: -2px;}
+
+#nodeFilter {background: #222; color: #999; border-radius: 4px; border: none; border-bottom: 3px solid #000; width: 99%;}
+#nodeFilter:focus {background: #111; color: #FFF;}
+
+.hp-node-list-container.filtered .hp-node-list-item {
+  display: none;
+}
+
+/*
+.hp-node-list-container.filtered .hp-node-list-item[data-node-name*="add"] {
+  display: block;
+}
+*/
+
+.hp-node-list-item[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  margin-left: -12em;
+  background: rgba(24, 24, 24, 0.6);
+  color: #CCC;
+  display: block;
+  min-width: 6em;
+  max-width: 12em;
+  padding: 0.5em;
+  pointer-events: none;
+  z-index: 2200;
+  border-radius: 5px;
+  white-space: pre-line;
+}
+
+.hp-node-list-item.node-generator {
+  background-color: #aca;
+}
+
+.hp-node-list-item.node-variadic {
+  background-color: #cac;
+}
+
+.hp-node-list-item[data-node-name$=".hpm"] {
+  background-color: #aac;
+}
+
+.hp-node-list-item.node-sink {
+  background-image: linear-gradient(45deg, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.25) 25%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 100%);
+}
+
+.hp-node-list-item.node-source {
+  background-image: linear-gradient(45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 74%,rgba(255,255,255,0.25) 75%,rgba(255,255,255,0.25) 100%);
+}
+
+.hp-node-list-item.node-source.node-sink {
+  background-image: linear-gradient(45deg, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.25) 25%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 74%,rgba(255,255,255,0.25) 75%,rgba(255,255,255,0.25) 100%);
+}
+
+.hp-node .hp-node-header {
+  color:white;
+  font-size: 10px;
+  margin:0;
+  width:100%;
+  background-color: black;
+  display: block;
+  padding: 0.2em 1em 0.2em 1em;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+}
+
+.hp-node-header:not([contenteditable=true]):not([data-nodetype=data-nodename]):after {
+  content: ' (' attr(data-nodetype) ')'
+}
+
+.hp-node-header:not([contenteditable=true])[data-nodename=""]:after {
+  content: attr(data-nodetype);
+}
+
+.hp-node-header[contenteditable=true] {
+  background-color: #113;
+  border-color: #33F;
+}
+
+.hp-node-io {
+  font-size:11px;
+  box-sizing: border-box;
+  padding:0.1em;
+}
+
+.hp-node-inputs {
+  float:left;
+  text-align:left;
+  margin-right: 2em;
+}
+
+.hp-node-outputs {
+  float:right;
+  text-align:right;
+  margin-left: 2em;
+}
+.hp-node-inputs .hp-port-editor {
+  position:absolute;
+  left:-75px;
+  margin-top:-5px;
+  width:48px;
+  height:20px;
+  box-sizing: border-box;
+  background-color: #944;
+  color: #CCC;
+  z-index: 10000;
+  opacity:0.8;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+._jsPlumb_endpoint {
+  z-index: auto !important;
+}
+
+.hp-node._jsPlumb_drag_select {
+  box-shadow: 1em 1em 2em #000;
+}
+
+.hp-port {
+  box-sizing: border-box;
+  padding:0.2em 0.8em 0.2em 0.6em;
+	cursor: default;
+}
+
+.hp-port[data-continuous="true"] {
+  font-style: italic;
+}
+
+.hp-port-editor {
+  position:absolute;
+  margin-left:18px;
+  margin-top:-5px;
+  width:48px;
+  height:20px;
+  box-sizing: border-box;
+  background-color: #944;
+  color: #CCC;
+  z-index: 10000;
+  opacity:0.8;
+  border: 1px solid #999;
+  border-radius: 3px;
+  transition: opacity 0.8s, background-color 0.8s;
+}
+
+.hp-port-editor:focus {
+  color: #FFF;
+  outline: 1px orange;
+}
+
+.hidePortEditors .hp-port-editor {
+  opacity: 0.2;
+  background-color: #222;
+  pointer-events: none;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.hp-port-editor.warn {
+  border-color: #F11;
+  box-shadow: 4px 0 0 #F00;
+}
+
+.hp-port-editor[type=color], ::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::-webkit-color-swatch {
+  border: none;
+}
+
+.ui-draggable-dragging {
+  z-index: 600;
+}
+
+.hp-mapping-container  ._jsplumb_endpoint{z-index:21;}
+
+.mapping-panel {
+	height:100%;
+	margin:0;
+	background-color: #333;
+}
+
+.hp-node {
+  display:inline-block;
+  background-color: #555;
+  border: 1px solid #111;
+  box-shadow: 2px 2px 19px #222;
+  border-radius: 2px;
+  position: absolute;
+  color: black;
+  padding: 0em;
+  font-size: 14px;
+  transition: box-shadow 0.15s ease-in;
+  cursor: move;
+  min-height: 2em;
+}
+
+.hp-node.muted {
+  opacity: 0.4;
+}
+
+.hp-node[data-nodetype=Comment] {
+  background-color: #567;
+  resize: both;
+}
+
+.hp-node[data-nodetype=Comment] .hp-port {
+  display: none;
+}
+
+.hp-node[data-nodetype=Comment] .hp-node-header {
+  color: #000;
+  background-color: #7AB;
+}
+
+.hp-node[data-nodetype=Comment] ._jsPlumb_endpoint {
+  display: none;
+}
+
+/**
+ * Console Panel
+ */
+ul.hp-console {
+  margin: 0.5em;
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+  border: 1px inset #333;
+  background: #111;
+  color: #CCC;
+  box-sizing: border-box;
+  height: calc(100% - 1em);
+}
+
+.hp-console li {
+  border-bottom: 1px solid #333;
+  border-left: 4px solid #444;
+  color: #CCC;
+  padding: 3px;
+  font-family: monospace;
+  cursor: default;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+}
+
+.hp-console li:hover {
+  background: #292933;
+}
+
+.hp-console li.warn {
+  border-left-color: orange;
+}
+
+.hp-console li.error {
+  border-left-color: orangered;
+}
+
+.hp-console li.info {
+  border-left-color: cornflowerblue;
+}
+
+/**
+ * Panel UI
+ */
+.panelEditor, .panelUI {
+  color: #777;
+  padding: 1em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.panelEditor.presetTable_off {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* position: relative; */
+}
+
+.panelEditor label, .panelUI label {
+  margin-right: 1em;
+}
+
+.panelEditor .editorPorts {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.panelEditor .editorPorts > div {
+  width: 40%;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.panelEditor .editorPorts ul, .panelEditor .editorPorts select {
+  width: 100%;
+  border: 1px solid #666;
+  background: #111;
+  margin: 0 1em 1em 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.panelEditor .editorPorts > div:nth-child(2) select {
+  text-align: right;
+}
+
+.panelEditor .editorPorts li, .panelEditor .editorPorts option {
+  margin: 1px;
+  background: #999;
+  color: #000;
+  padding: 0 0.5em;
+}
+
+.panelEditor .editorPorts > div input {
+  width: 66%;
+  margin-right: 0.5em;
+  padding: 0.5em;
+}
+
+.panelEditor input {
+  height: 1.2em;
+}
+
+.panelEditor input, .panelEditor textarea {
+  color: #CCC;
+  border: 1px solid #666;
+  border-radius: 3px;
+  background-color: #111;
+  margin-bottom: 1em;
+}
+
+.panelEditor textarea {
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  font-family: "consolas", monospace;
+  font-size: 14px;
+  width: 100%;
+  min-height: 6em;
+  resize: vertical;
+}
+
+.panelEditor button {
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  background-color: #999;
+  box-shadow: 3px 3px 6px #000;
+  padding: 0.5em 1em;
+}
+
+.panelEditor button:active {
+  background-color: #888;
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.panelCanvas {
+  margin: auto;
+  background: #000;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.btn-base, .select-source-btn {
+  box-sizing: border-box;
+}
+
+table.failover-tbl thead tr {
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size:18px;
+  color:#eee;
+  margin:5px;
+  background-color:#111;
+  border:2px solid #333;
+  display: block;
+}
+
+table.failover-tbl tbody tr {
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size:36px;
+  color:#eee;
+  margin:5px;
+  background-color:#111;
+  border:2px solid #333;
+  display: block;
+  padding:0;
+}
+
+table.failover-tbl tbody tr td.source-active-lgt, table.failover-tbl tbody tr td.data-good-lgt {
+  border-right:2px solid #333;
+  width:80px;
+  background-color:#311;
+  margin:0;
+  padding:0;
+}
+
+table.failover-tbl tbody tr td div.failover-field {
+  font-size:18px;
+  margin:0px 5px 0px 10px;
+  opacity: 0.5;
+}
+
+table.failover-tbl tbody tr td.select-source-btn {
+  padding:10px;
+  text-align: center;
+  width:200px;
+  text-transform: uppercase;
+}
+
+.active {
+  background-color: #181!important;
+}
+
+.failover-panel {
+  float:left;
+  display:block;
+  padding:10px;
+  border-right: 1px solid #333;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.failover-panel > label {
+  color:#eee;
+  font-weight:bold;
+  font-size:18px;
+  text-transform: uppercase;
+}
+
+
+
+.light-base {
+  height:80px;
+  width:80px;
+  float:left;
+  margin:5px;
+  background-color:#f22;
+  border-radius: 40px;
+}
+
+.headsup {
+  display:inline-block;
+  vertical-align: center;
+  width:100%;
+  margin:10px;
+}
+
+.btn-selected {
+  background-color:#061181;
+  border:2px solid yellow!important;
+}
+
+.active-txt {
+  font-size:14px;
+  line-height:14px;
+  margin:0;
+  padding:0;
+  width:100%;
+  display:inline-block;
+  text-align: center;
+}
+
+.lines {
+    background-size: 40px 40px;    
+    background-image:repeating-linear-gradient(0deg, #666, #666 2px, transparent 2px, transparent 40px),repeating-linear-gradient(-90deg, #666, #666 2px, transparent 2px, transparent 40px);
+    height:300%;
+    width:300%;
+    opacity:0.14;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:0;
+}
+
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.panelEditor .handsontable th, .panelEditor .handsontable td {
+  border-color: #444 !important;
+  color: #CCC;
+  background-color: #111;
+}
+
+.panelEditor .handsontable th {
+  background-color: #333;
+  border-color: #000 !important;
+  color: #FFF;
+  /* position: sticky; */
+}
+
+.panelEditor .handsontable td.area {
+  background-color: inherit;
+  background-image: none;
+}
+
+/**
+The following styles fix weird scrolling behavior of column headers (and some things in general, with Handsontable). Their overuse of CSS and JavaScript to set arbitrary sizes is the problem, so we undo that as best we can. There's still a vertical scrollbar that appears on the table when a cell/row/column outline extends below the table viewport. It bugs me, but it's fine.
+*/
+
+.panelEditor > .presetContainer {
+  position: relative;
+  /*
+  overflow-x: auto;
+  overflow-y: auto;
+  */
+  overflow: hidden;
+  /*
+  width: 100%;
+  height: 100%;
+  min-height: 8em;
+  */
+  box-sizing: border-box;
+  width: calc(100% - 2em);
+  height: calc(100% - 4em);
+  padding: 1em 1em 2em 0;
+  /* margin-bottom: 2em; */
+}
+
+.panelEditor .ht_master, .panelEditor .wtHolder {
+  /* overflow: visible !important; */
+  /* overflow: hidden !important; */
+}
+/*
+.panelEditor .wtHolder {
+  width: auto !important;
+  height: auto !important;
+}
+*/
+
+
+

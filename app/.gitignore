@@ -1,0 +1,8 @@
+.DS_Store
+build/
+*.log
+*.wav
+node_modules/
+tags
+notes.txt
+maps/*

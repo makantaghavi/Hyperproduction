@@ -1,0 +1,137 @@
+{
+  "nodes": {
+    "0": {
+      "nodetype": "AddOperation2i1o",
+      "descr": "Two input adder",
+      "ports": {
+        "inputs": {
+          "i1": "85ea01f5-6e01-4d59-a561-f36ec5f7a624",
+          "i2": "51cd72a3-4c3d-4764-94af-3a4b5b69bad2"
+        },
+        "outputs": {
+          "o1": "cd869ad5-1e7b-479f-b8b6-b6ce5fa6ad17"
+        }
+      }
+    },
+    "1": {
+      "nodetype": "AddOperation2i1o",
+      "descr": "Two input adder",
+      "ports": {
+        "inputs": {
+          "i1": "9d768dc1-b83e-4bb4-825c-0d912f15dc0f",
+          "i2": "692308bf-010f-40a4-8787-6f9f650c9a8c"
+        },
+        "outputs": {
+          "o1": "7c1d8ebf-a9b7-4549-b46d-5925a9359288"
+        }
+      }
+    },
+    "2": {
+      "nodetype": "AddOperation2i1o",
+      "descr": "Two input adder",
+      "ports": {
+        "inputs": {
+          "i1": "b393e228-d3e5-4b48-8027-fbacbf185d59",
+          "i2": "1a76336c-188d-4c4b-ad50-ad6be40d1d90"
+        },
+        "outputs": {
+          "o1": "833ee440-b7c8-44ae-a996-11a2a95dc36e"
+        }
+      }
+    },
+    "3": {
+      "nodetype": "AddOperation2i1o",
+      "descr": "Two input adder",
+      "ports": {
+        "inputs": {
+          "i1": "3d0f3387-5489-407b-b649-b206690817cd",
+          "i2": "5093a536-e3ce-4894-b0a3-4ba8d4108730"
+        },
+        "outputs": {
+          "o1": "88a792c9-d33d-4dd8-9be6-2e1fc6e0bf6e"
+        }
+      }
+    },
+    "4": {
+      "nodetype": "AddOperation2i1o",
+      "descr": "Two input adder",
+      "ports": {
+        "inputs": {
+          "i1": "39c8fb11-3eeb-4a04-93da-ee59aaf37edb",
+          "i2": "bb6d9689-5459-48a8-ac1b-3dd6e51091b6"
+        },
+        "outputs": {
+          "o1": "4fe5d9b3-bf7b-4929-8253-a44c1793c7c1"
+        }
+      }
+    },
+    "5": {
+      "nodetype": "AddOperation2i1o",
+      "descr": "Two input adder",
+      "ports": {
+        "inputs": {
+          "i1": "16c354d2-0b8f-4127-8021-82b29f7a2bc6",
+          "i2": "7df72127-3ea4-4542-b82a-fb19b9ce94d2"
+        },
+        "outputs": {
+          "o1": "a8a10502-4066-498f-8aa9-f12c039565a7"
+        }
+      }
+    },
+    "6": {
+      "nodetype": "AddOperation2i1o",
+      "descr": "Two input adder",
+      "ports": {
+        "inputs": {
+          "i1": "13bd5d78-0c0d-4a84-8a70-b056d5824a60",
+          "i2": "551e13b6-a53c-4f2f-95bc-c196b5bc1b05"
+        },
+        "outputs": {
+          "o1": "6c3e309c-ba5b-4d20-9064-4abe076787f9"
+        }
+      }
+    },
+    "counter": {
+      "nodetype": "ProcessCounter",
+      "descr": "Increments output each time input is triggered.",
+      "ports": {
+        "inputs": {
+          "i1": "2ca0bc76-b69d-4141-8b96-399d4c0677cc"
+        },
+        "outputs": {
+          "o1": "abc12cbd-cf57-45d4-b9e9-96dfd1377c96"
+        }
+      }
+    }
+  },
+  "connections": {
+    "ad9e9968-8413-4f99-a17a-09073c0b572d": {
+      "o": "7c1d8ebf-a9b7-4549-b46d-5925a9359288",
+      "i": "85ea01f5-6e01-4d59-a561-f36ec5f7a624"
+    },
+    "8d14db18-53a8-405c-9bdf-8bcf991a98c5": {
+      "o": "833ee440-b7c8-44ae-a996-11a2a95dc36e",
+      "i": "51cd72a3-4c3d-4764-94af-3a4b5b69bad2"
+    },
+    "9fbc7c36-87e2-428b-be45-aa272c7afcb1": {
+      "o": "88a792c9-d33d-4dd8-9be6-2e1fc6e0bf6e",
+      "i": "9d768dc1-b83e-4bb4-825c-0d912f15dc0f"
+    },
+    "94bcc659-37d6-40c2-a923-32136ea36571": {
+      "o": "4fe5d9b3-bf7b-4929-8253-a44c1793c7c1",
+      "i": "692308bf-010f-40a4-8787-6f9f650c9a8c"
+    },
+    "1b19facf-a3f2-4f8f-997c-d69309f4ce55": {
+      "o": "a8a10502-4066-498f-8aa9-f12c039565a7",
+      "i": "b393e228-d3e5-4b48-8027-fbacbf185d59"
+    },
+    "38fd54a1-3318-4114-a631-885f204d27e3": {
+      "o": "6c3e309c-ba5b-4d20-9064-4abe076787f9",
+      "i": "1a76336c-188d-4c4b-ad50-ad6be40d1d90"
+    },
+    "1120db72-46b4-49e0-afc7-147b8b15dfae": {
+      "o": "cd869ad5-1e7b-479f-b8b6-b6ce5fa6ad17",
+      "i": "2ca0bc76-b69d-4141-8b96-399d4c0677cc"
+    }
+  }
+}

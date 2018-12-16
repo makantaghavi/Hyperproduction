@@ -1,0 +1,8 @@
+{
+	"path": {
+		"**.js": {
+			"spaceUnits": 2,
+			"useTabChar": false
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{ nodes:
+   { a:
+      { nodetype: 'IdentityOperation2i2o',
+        descr: '2-Input Identity',
+        ports:
+         { inputs:
+            { i1: '7b33e87d-49e3-443e-8213-6bc765387d9a',
+              i2: '16abf7df-ac56-4172-a9f4-0eea97c03ce2' },
+           outputs:
+            { o1: '336f5e5a-330e-49b2-a099-2a9469c6a886',
+              o2: 'f09002ce-f96a-428c-a707-6a514c2eaab8' } } },
+     b:
+      { nodetype: 'IdentityOperation2i2o',
+        descr: '2-Input Identity',
+        ports:
+         { inputs:
+            { i1: 'a64cf8bb-6d5d-4bbb-987b-eddc446bc488',
+              i2: '0e532354-b50f-42b6-8bf4-c7d54160663d' },
+           outputs:
+            { o1: '7d215d02-094c-442d-9393-7dfdf3306148',
+              o2: 'ea47e981-3ef7-488b-838a-de6e1a47acaa' } } } },
+  connections:
+   { '1d8937fb-a360-42f5-822e-ab703f56e020':
+      { o: '336f5e5a-330e-49b2-a099-2a9469c6a886',
+        i: 'a64cf8bb-6d5d-4bbb-987b-eddc446bc488' } } }

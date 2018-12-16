@@ -1,0 +1,51 @@
+.DS_Store
+build/
+*.log
+*.wav
+node_modules/
+downloaded-atom-shell/
+downloaded-electron/
+app/maps/default.hpm
+tags
+atom-shell-v0.22.1-win32-ia32/
+app/.jshintrc
+app/.jsbeautifyrc
+app/notes.txt
+app/maps/*
+app/node_modules/
+!app/maps/Fensadense-Myo-Demo.hpm
+electron/
+
+### Intellij ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+*.iml
+
+.idea/
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+
+# BitSync
+Icon?
+.sync/ID
+.sync/IgnoreList
+.sync/StreamsList
+
+meter/
+oscbridge/

@@ -1,0 +1,156 @@
+{
+  "nodes": {
+    "48c41ed6-64f6-414d-809f-5f66be998f15": {
+      "nodetype": "AddOperation2i1o",
+      "descr": "Two input adder",
+      "ports": {
+        "inputs": {
+          "i1": "145b2021-4c89-42f6-aa6d-3d0635da77e0",
+          "i2": "7bd63c9d-ccfd-47c3-9040-429bf99a2322"
+        },
+        "outputs": {
+          "o1": "b86ee1cf-a64e-4538-8b7b-29d3e5861f4d"
+        }
+      }
+    },
+    "8a8ea6c9-c8dd-4a78-9cf2-92e46602e386": {
+      "nodetype": "Inlet",
+      "descr": "Allows publishing inputs of a ContainerMapNode.",
+      "ports": {
+        "inputs": {
+          "i1": "26546e23-11cd-4107-9d3d-24dd57007ad6"
+        },
+        "outputs": {
+          "o1": "b7a00c01-6e52-4da5-a7cb-23542ea1ac47"
+        }
+      }
+    },
+    "16021595-e14e-4d14-8585-df98a5f3c804": {
+      "nodetype": "Inlet",
+      "descr": "Allows publishing inputs of a ContainerMapNode.",
+      "ports": {
+        "inputs": {
+          "i1": "0540fa4c-5a65-49ef-b654-b7ed31992710"
+        },
+        "outputs": {
+          "o1": "09a91baf-7df0-4d33-94c8-30d107fb99cd"
+        }
+      }
+    },
+    "4815305b-0aaa-4472-bb10-3eb0efc45cd2": {
+      "nodetype": "Outlet",
+      "descr": "Allows publishing outputs of a ContainerMapNode.",
+      "ports": {
+        "inputs": {
+          "i1": "18fbdc58-3bfb-4e22-8f4f-2f02371fd873"
+        },
+        "outputs": {
+          "o1": "4a0768cb-2cc7-4361-9863-671ad39a10d1"
+        }
+      }
+    },
+    "d9b0b6f7-a615-406d-85db-a30a2baebd71": {
+      "nodes": {
+        "620c5257-bede-485b-a0df-580f95155dc0": {
+          "nodetype": "AddOperation2i1o",
+          "descr": "Two input adder",
+          "ports": {
+            "inputs": {
+              "i1": "59363ee1-834a-4c91-841a-4fd6a1330741",
+              "i2": "5c9f5ab6-8f1d-410f-bf12-2e87374456de"
+            },
+            "outputs": {
+              "o1": "6dea271a-505c-4011-988c-41c6dd1bd296"
+            }
+          }
+        },
+        "81292832-7a04-4054-829c-9692c685e39d": {
+          "nodetype": "Inlet",
+          "descr": "Allows publishing inputs of a ContainerMapNode.",
+          "ports": {
+            "inputs": {
+              "i1": "f8d80287-abf6-4894-99fb-47f10b36d914"
+            },
+            "outputs": {
+              "o1": "766409c1-b12a-4809-a128-940a1aa6a6a3"
+            }
+          }
+        },
+        "b8d48301-ca56-48b6-834b-3626508f7c70": {
+          "nodetype": "Inlet",
+          "descr": "Allows publishing inputs of a ContainerMapNode.",
+          "ports": {
+            "inputs": {
+              "i1": "70e80717-4763-445e-90dd-662c23d09231"
+            },
+            "outputs": {
+              "o1": "84c40f16-418a-4f18-947a-062d098258bf"
+            }
+          }
+        },
+        "b507585e-41eb-40b3-855a-31c4d37e6d33": {
+          "nodetype": "Outlet",
+          "descr": "Allows publishing outputs of a ContainerMapNode.",
+          "ports": {
+            "inputs": {
+              "i1": "e60166f6-b081-4863-a5b7-c7cace8ca8fc"
+            },
+            "outputs": {
+              "o1": "7ead8a71-d57e-499d-857a-a7917101f29d"
+            }
+          }
+        }
+      },
+      "connections": {
+        "62702f9c-6752-4a0a-ad0d-b6c4bfe30fe7": {
+          "o": "766409c1-b12a-4809-a128-940a1aa6a6a3",
+          "i": "59363ee1-834a-4c91-841a-4fd6a1330741"
+        },
+        "0eb3e627-3da4-4be5-a4f2-385f2599266e": {
+          "o": "84c40f16-418a-4f18-947a-062d098258bf",
+          "i": "5c9f5ab6-8f1d-410f-bf12-2e87374456de"
+        },
+        "b23a2e5d-c686-44d6-ac7e-d454b4c351ca": {
+          "o": "6dea271a-505c-4011-988c-41c6dd1bd296",
+          "i": "e60166f6-b081-4863-a5b7-c7cace8ca8fc"
+        }
+      },
+      "nodetype": "ContainerMapNode",
+      "descr": "A container for a sub mapping.",
+      "ports": {
+        "inputs": {
+          "in-81292832-7a04-4054-829c-9692c685e39d": "f8d80287-abf6-4894-99fb-47f10b36d914",
+          "in-b8d48301-ca56-48b6-834b-3626508f7c70": "70e80717-4763-445e-90dd-662c23d09231"
+        },
+        "outputs": {
+          "out-b507585e-41eb-40b3-855a-31c4d37e6d33": "7ead8a71-d57e-499d-857a-a7917101f29d"
+        }
+      }
+    }
+  },
+  "connections": {
+    "7f7d1c20-bf07-405c-91ba-7195754058bb": {
+      "o": "b7a00c01-6e52-4da5-a7cb-23542ea1ac47",
+      "i": "145b2021-4c89-42f6-aa6d-3d0635da77e0"
+    },
+    "04dbc24c-e6cd-477a-bd67-1bd9173be56a": {
+      "o": "09a91baf-7df0-4d33-94c8-30d107fb99cd",
+      "i": "7bd63c9d-ccfd-47c3-9040-429bf99a2322"
+    },
+    "2f7a43ab-caad-4795-b0a0-30e4ea60ce29": {
+      "o": "b86ee1cf-a64e-4538-8b7b-29d3e5861f4d",
+      "i": "18fbdc58-3bfb-4e22-8f4f-2f02371fd873"
+    }
+  },
+  "nodetype": "ContainerMapNode",
+  "descr": "A container for a sub mapping.",
+  "ports": {
+    "inputs": {
+      "in-8a8ea6c9-c8dd-4a78-9cf2-92e46602e386": "26546e23-11cd-4107-9d3d-24dd57007ad6",
+      "in-16021595-e14e-4d14-8585-df98a5f3c804": "0540fa4c-5a65-49ef-b654-b7ed31992710"
+    },
+    "outputs": {
+      "out-4815305b-0aaa-4472-bb10-3eb0efc45cd2": "4a0768cb-2cc7-4361-9863-671ad39a10d1"
+    }
+  }
+}
