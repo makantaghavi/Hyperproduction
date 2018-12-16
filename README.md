@@ -60,3 +60,4 @@ Getting OSC in and out of Hyperproduction is relatively simple. At some point we
 * [Peter Torpey](http://petertorpey.com) is responsible for much of the current functionality of this project.
 * David Nunez created the initial preset module
 * Kevin King contributed some helper utilities for FFT and MIDI to OSC conversion and a lot of code for Fensadense!
+* Makan Taghavi contributed to make this project open source by perfoming the testing for the main modules, enhanced documentation and distribution.
